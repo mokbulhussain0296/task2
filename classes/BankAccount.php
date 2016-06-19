@@ -1,13 +1,18 @@
 <?php
 
+
+
+
 class BankAccount implements IfaceBankAccount
 {
 
-    private $balance = null;
+    public $balance = null;
 
     public function __construct(Money $openingBalance)
     {
+
         $this->balance = $openingBalance;
+  
     }
 
     public function balance()
@@ -17,11 +22,27 @@ class BankAccount implements IfaceBankAccount
 
     public function deposit(Money $amount)
     {
-        //implement this method
+
+       $this->balance = $amount;
+       
+    }
+
+
+    public function withdraw(Money $amount)
+    {
+       $this->balance=$amount;
     }
 
     public function transfer(Money $amount, BankAccount $account)
     {
-        //implement this method
+
+
+       $this->balance = $amount;
+
+ 
+     
     }
+
+
+    
 }
