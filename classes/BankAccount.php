@@ -6,7 +6,7 @@
 class BankAccount implements IfaceBankAccount
 {
 
-    public $balance = null;
+    private $balance = null;
 
     public function __construct(Money $openingBalance)
     {
